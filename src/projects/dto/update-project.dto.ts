@@ -1,8 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateProjectDto } from './create-project.dto';
-import { IsArray, IsOptional, IsString, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
-import { CreateVacancyDto } from 'src/vacancies/dto/create-vacancy.dto';
+import { IsOptional, IsString } from 'class-validator';
 
 export class UpdateProjectDto extends PartialType(CreateProjectDto) {
   @ApiProperty({
@@ -22,7 +20,6 @@ export class UpdateProjectDto extends PartialType(CreateProjectDto) {
   @IsOptional()
   @IsString()
   description: string;
-
 
   @ApiProperty({
     title: 'This is a deadline of project',

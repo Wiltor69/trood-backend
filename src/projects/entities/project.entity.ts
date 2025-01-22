@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { HydratedDocument } from 'mongoose';
-import { Vacancy, VacancySchema } from 'src/vacancies/entities/vacancy.entity';
+
 
 export type ProjectDocument = HydratedDocument<Project>;
 @Schema({
@@ -24,14 +24,7 @@ export class Project {
   @Prop({ required: true })
   description: string;
 
-  @ApiProperty({
-    title: 'Thees are vacancies',
-    example: 'Design, Backend',
-    required: true,
-  })
-  @Prop({ type: [VacancySchema], default: [] })
-  vacancies: Vacancy[];
-
+  
   @ApiProperty({
     title: 'This is a deadline of project',
     example: '22.11.2025',

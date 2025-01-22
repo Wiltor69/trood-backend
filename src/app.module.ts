@@ -3,10 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from './db/mongoose.module';
 import { ProjectsModule } from './projects/projects.module';
-import { VacanciesModule } from './vacancies/vacancies.module';
+
 
 @Module({
-  imports: [MongooseModule, ProjectsModule, VacanciesModule],
+  imports: [MongooseModule, ProjectsModule],
   controllers: [AppController],
   providers: [AppService],
 })

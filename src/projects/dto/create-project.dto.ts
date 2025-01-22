@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
-import { IsArray, IsOptional, IsString, ValidateNested } from 'class-validator';
-import { CreateVacancyDto } from 'src/vacancies/dto/create-vacancy.dto';
+
+import { IsOptional, IsString } from 'class-validator';
+
 
 export class CreateProjectDto {
   @ApiProperty({
@@ -22,16 +22,7 @@ export class CreateProjectDto {
   @IsString()
   description: string;
 
-  @ApiProperty({
-    title: 'Thees are vacancies',
-    example: 'Design, Backend',
-    required: true,
-  })
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => CreateVacancyDto)
-  @IsOptional()
-  vacancies?: CreateVacancyDto[];
+  
 
   @ApiProperty({
     title: 'This is a deadline of project',
@@ -41,4 +32,6 @@ export class CreateProjectDto {
   @IsOptional()
   @IsString()
   deadline: string;
+
+  
 }
