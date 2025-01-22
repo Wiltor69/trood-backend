@@ -12,6 +12,7 @@ export class Project {
   @ApiProperty({
     title: 'This is a name of project',
     example: 'Creating visual materials for social media',
+    
   })
   @Prop({ required: true })
   name: string;
